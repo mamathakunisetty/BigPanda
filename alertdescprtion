@@ -1,0 +1,16 @@
+This is a example(raw) alert description which we used in Splunk with integarting BigPanda.
+
+index=your_index  "connectivity failed due to Response timeout" 
+| eval event_title="AutoAlert - P2 - ApplicationNAME - Connectivity timeout"
+| eval event_impacted_service="C** Service"
+| eval event_environment="Production" 
+| eval event_priority="P2" 
+| eval event_description="connectivity failed due to Response timeout" 
+| eval event_impacted_ci=host 
+| eval event_source="Splunk -> Alerting System" 
+| eval event_queue_destination="Ticket_API" 
+| eval event_tags = "CMS"
+| eval event_cc = "team@yourdomain.com"
+| eval KB="No KB" 
+| table event_title event_impacted_service event_environment event_priority event_description event_impacted_ci event_source event_queue_destination event_tags event_cc KB
+
